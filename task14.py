@@ -1,17 +1,8 @@
-#!python3
-# Find the tax
-
-"""
-Different provinces charge different amounts of sales tax
-
-Write a program that takes 1 required positional argument (price)
-and 1 optional argument: percent
-We will use a default value of 7% sales tax for BC
-"""
-
 import random
-def calcTax():  # you will need to add your arguments here
-    return      # you will need to add a return value
+def calcTax(price, percent = 7):
+    tax = price * percent / 100  # you will need to add your arguments here
+    return round(tax, 2)     # you will need to add a return value
+
 
 if __name__ == "__main__":
     assert calcTax(61.49) == 4.3
@@ -30,15 +21,15 @@ if __name__ == "__main__":
     assert calcTax(75.34,9) == 6.78
     assert calcTax(138.38,11) == 15.22
     assert calcTax(121.88,12) == 14.63
-    assert calcTax(42.99,9) == 3.87   
+    assert calcTax(42.99,9) == 3.87  
     assert calcTax(126.05,12) == 15.13
     assert calcTax(108.01,7) == 7.56  
     assert calcTax(100.35,11) == 11.04
-    assert calcTax(86.46,6) == 5.19   
-    assert calcTax(69.19,9) == 6.23   
-    assert calcTax(69.85,6) == 4.19   
+    assert calcTax(86.46,6) == 5.19  
+    assert calcTax(69.19,9) == 6.23  
+    assert calcTax(69.85,6) == 4.19  
     assert calcTax(28.48,10) == 2.85  
-    assert calcTax(16.41,7) == 1.15   
+    assert calcTax(16.41,7) == 1.15  
     assert calcTax(132.66,5) == 6.63
     assert calcTax(81.53,12) == 9.78
     assert calcTax(119.9,7) == 8.39

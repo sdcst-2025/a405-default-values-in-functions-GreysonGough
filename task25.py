@@ -20,12 +20,23 @@ Conversion rates to use:
 Units must be in ["USD","CAD","BTC","AUD","Yen","Eur"]
 """
 
-def convert():
+def convert(amount, from_currency="CAD", to_currency="USD"):
+    rates_to_usd = {
+        "USD": 1,
+        "CAD": 1 / 1.35,
+        "BTC": 62000,  
+        "AUD": 1 / 1.51,     
+        "Yen": 1 / 155,
+        "Eur": 1.07           
+    }
+      
+    usd_amount = amount * rates_to_usd[from_currency]
+    result = usd_amount / rates_to_usd[to_currency]
     # inputs
     # required: amount of currency
     # optional: original currency type default CAD
     # optional: converted currency type default USD
-    return       
+    return round(result, 2) 
     # returns the number of what you are converting to along with units
     # round answers to 4 decimals
 
